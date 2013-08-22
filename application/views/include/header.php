@@ -8,6 +8,7 @@
       <li><a href="<?php echo base_url()?>index.php/User">Dashboard</a></li>
       <li><a href="<?php echo base_url()?>index.php/User/new_item">New Item</a></li>
       <li><a href="<?php echo base_url()?>index.php/User/view_inventory">View Inventory</a></li>
+      <li><a href="<?php echo base_url()?>index.php/User/view_new_transaction">New Transaction</a></li>
     </ul>
   </div>
 </div>

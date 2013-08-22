@@ -34,5 +34,16 @@ class User extends MY_Controller
 	$this->load->view('success');
 	}
 
+	function view_new_transaction()
+	{
+		$this->load->view('include/header');
+		$this->load->view('new_transaction');
+	}
+	function new_transaction()
+	{
+		$this->load->model('inventory');
+		$this->inventory->new_transaction();
+		$this->load->view('success');
+	}
 }
 ?>
