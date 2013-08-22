@@ -1,0 +1,31 @@
+#newitem
+{
+	text-align: center;
+}
+#welcome
+{
+	font-family: "Gill Sans", "Futura";
+	letter-spacing: .9em;
+	font-size: 18px;
+	font-weight: lighter;
+	text-align: center;
+	text-transform: uppercase;
+}
+#infobutton
+{
+	display: block;
+	position: absolute;
+	top: 300px;
+	left: -10px;
+	-webkit-transform: rotate(-90deg); 
+	-moz-transform: rotate(-90deg);	
+}
+#signupform
+{
+	margin: auto;
+	max-width: 300px;
+}
+#alreadymember
+{
+	text-align: center;
+}
