@@ -1,5 +1,6 @@
 <head>
-<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/style.css">
 </head>
 <?php include('include/header.php'); ?>
 <br><br>
