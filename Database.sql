@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 23, 2013 at 12:08 AM
+-- Generation Time: Aug 23, 2013 at 10:28 PM
 -- Server version: 5.5.29
 -- PHP Version: 5.4.10
 
@@ -50,6 +50,13 @@ CREATE TABLE `inventory` (
   UNIQUE KEY `SKU` (`SKU`,`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `inventory`
+--
+
+INSERT INTO `inventory` (`ItemName`, `SKU`, `Stock`, `Price`, `UserID`) VALUES
+('starbucks', 'starbucks', '11', 'starbucks', '');
+
 -- --------------------------------------------------------
 
 --
@@ -63,6 +70,25 @@ CREATE TABLE `login_attempts` (
   `time` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transactions`
+--
+
+CREATE TABLE `transactions` (
+  `ItemName` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `QuantitySold` varchar(255) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transactions`
+--
+
+INSERT INTO `transactions` (`ItemName`, `QuantitySold`) VALUES
+('starbucks', '10'),
+('starbucks', '11');
 
 -- --------------------------------------------------------
 
@@ -97,7 +123,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
 (1, '\0\0', 'administrator', '59beecdf7fc966e2f17fd8f65a4a9aeb09d4a3d4', '9462e8eee0', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1373510655, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-(2, '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', 'jake ols', '4207b918af88aaca0d1c7d44267c591b7a6018f4', NULL, 'jake_ols@live.com', NULL, NULL, NULL, NULL, 1373510942, 1377206896, 1, 'Jake', 'Ols', 'n/a', '3303045044'),
+(2, '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', 'jake ols', '4207b918af88aaca0d1c7d44267c591b7a6018f4', NULL, 'jake_ols@live.com', NULL, NULL, NULL, NULL, 1373510942, 1377288993, 1, 'Jake', 'Ols', 'n/a', '3303045044'),
 (3, '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', 'test test', '2fd3b834ef99609984bb57d7e202dadfc7757d8e', NULL, 'test@test.com', NULL, NULL, NULL, NULL, 1373731290, 1373731301, 1, 'test', 'test', 'test', '3303045044');
 
 -- --------------------------------------------------------
