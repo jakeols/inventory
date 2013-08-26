@@ -36,6 +36,5 @@ class Inventory extends CI_Model
 		$query = $this->db->select('ItemName, QuantitySold')->from("transactions")->get();
 		return $query->result();
 	}
-
 }
 ?>
