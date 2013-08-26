@@ -9,7 +9,6 @@
       <li><a href="<?php echo base_url()?>index.php/User/view_inventory">View Inventory</a></li>
       <li><a href="<?php echo base_url()?>index.php/User/view_new_transaction">New Transaction</a></li>
       <li><a href="<?php echo base_url()?>index.php/User/view_transactions">View Transactions</a></li>
-      <li><a href="<?php echo base_url()?>index.php/auth/logout">Logout</a></li>
     </ul>
   </div>
 </div>
