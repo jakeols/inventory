@@ -19,6 +19,8 @@ class Inventory extends CI_Model
 	}
 	function new_transaction()
 	{
+		$query = $this->db->select("Stock")->from("inventory")->get();
+			return $query->result();
 
 		$data = array('Itemname' => $this->input->post('f1'),
 		                  'Stock' => $this->input->post('f2')
