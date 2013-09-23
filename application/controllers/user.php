@@ -9,12 +9,12 @@ class User extends MY_Controller
 
 	function index()
 	{
-		$query = $this->db->select('ItemName, SKU, Stock, Price')->get('inventory');
+		$query = $this->db->select('Itemname, QuantitySold, Date')->get('transactions');
 
 		foreach($query->result_array() as $row)
 		{
      // [x (date), y (count)]
-     $dataset1[] = array(strtotime($row['Stock']) * 1000, $row['Price']);
+     $dataset1[] = array(strtotime($row['Date']) * 1000, $row['QuantitySold']);
 		}
  
 		$data['dataset1'] = $dataset1;

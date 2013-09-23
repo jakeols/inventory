@@ -16,12 +16,10 @@
             points: { show: true }    
         }
     };
- 
     // Initialize Plot
     $(function() {
         $.plot($("#flot"), [ dataset1 ], options);
     });
 	</script>
-		
 	</div>
 </div>
