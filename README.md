@@ -3,7 +3,8 @@ Polism
 A small open source inventory management system I just began developing. Built in PHP using <a href="https://github.com/sjlu/CodeIgniter-Bootstrap">Codeigniter-Bootstrap</a><br>
 <h2> Stuff that needs to be done</h2>
 -Finish the transactions part<br>
--Dashboard Page: I still need to pick a JS library for this. 
+-Dashboard Page: Decided to use Flo<br>
+-Need to add date to transactions
 
 <h2>How to Install</h2>
 -Download zip file and unpack it<br>
