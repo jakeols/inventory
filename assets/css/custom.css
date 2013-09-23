@@ -5,3 +5,8 @@
 body {
    padding-top: 15px;
 }
+
+#flot{
+    width:600px;
+    height:300px;
+}

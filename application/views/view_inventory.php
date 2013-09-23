@@ -2,7 +2,7 @@
 
 <div class="container">
 
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
         <td><h3>Item Name</h3></td>
