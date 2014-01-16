@@ -9,17 +9,8 @@ class User extends MY_Controller
 
 	function index()
 	{
-		$query = $this->db->select('Itemname, QuantitySold, Date')->get('transactions');
-
-		foreach($query->result_array() as $row)
-		{
-     // [x (date), y (count)]
-     $dataset1[] = array(strtotime($row['Date']) * 1000, $row['QuantitySold']);
-		}
- 
-		$data['dataset1'] = $dataset1;
 		$this->load->view('include/header');
-		$this->load->view('dashboard', $data);
+		$this->load->view('dashboard');
    			
 	}
 

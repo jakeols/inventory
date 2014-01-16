@@ -2,11 +2,49 @@
  * All your custom CSS should go into this file
  */
 
-body {
-   padding-top: 15px;
-}
+
 
 #flot{
     width:600px;
     height:300px;
+}
+.block {
+  height: 300px;
+  text-align: center;
+  margin: 20px;
+}
+
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%; 
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+
+  /* For visualization 
+  background: #808080; width: 5px;
+  */
+}
+
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
+  padding: 10px 15px;
+  border: #F0F0F0 solid 1px;
+  background: #F7F7F7;
+}
+.title_text
+{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: lighter;
+	font-family: "Gill Sans", "Futura", Helvetica, Arial, sans-serif;
+	letter-spacing: .9em;
+	font-size: 15px;
+	color: #A62A2A;
+}
+.page_title
+{
+	text-align: center;
 }
