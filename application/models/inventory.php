@@ -26,10 +26,11 @@ class Inventory extends CI_Model
 		                  'QuantitySold' => $this->input->post('f2'),
 		                  'Date' => standard_date()
 	              		);
-		$itemname = $this->input->post('f1');
+				$this->db->insert('transactions', $data2);
+				$itemname = $this->input->post('f1');
 				$this->db->where('ItemName', $itemname); 
 	       		$this->db->update('inventory', $data);
-	       		$this->db->insert('transactions', $data2);
+	       		
 	}
  	function view_transactions()
  	{
