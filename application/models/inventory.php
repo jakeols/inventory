@@ -17,23 +17,22 @@ class Inventory extends CI_Model
 		$query = $this->db->select("ItemName, SKU, Stock, Price")->from("inventory")->get();
 		    return $query->result();
 	}
+
 	function new_transaction()
 	{
-		$ItemName = $this->input->post('f2');
+		$ItemName = $this->input->post('f1');
+		$this->db->where('ItemName', $ItemName);
 		$query = $this->db->select('Stock')->from('inventory')->get();
 		foreach ($query->result() as $row)
 			{
-			    echo $row->Stock;
+			     $row->Stock;
 			    
 			}
 			$oldstock = $row->Stock;
 			$numtosub = $this->input->post('f2');
-			echo $numtosub;
+			$numtosub;
 			$newstock = $oldstock - $numtosub;
-			echo $newstock;
-
-
-
+			$newstock;
 
 		$data = array('Itemname' => $this->input->post('f1'),
 		                  'Stock' => $newstock,

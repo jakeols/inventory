@@ -2,6 +2,28 @@
  * All your custom CSS should go into this file
  */
 
+.navbar,
+.navbar-default
+{
+  background-color: white;
+}
+{
+  color: #ffc966;
+  background-color: white;
+  border: 1px solid #ffc966;
+}
+.btn-primary
+{
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+.btn-primary:hover
+{
+  border-color: black;
+  color: black;
+  background-color: #f8f8f8;
+}
 
 
 #flot{
