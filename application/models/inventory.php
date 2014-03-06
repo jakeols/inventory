@@ -19,8 +19,24 @@ class Inventory extends CI_Model
 	}
 	function new_transaction()
 	{
+		$ItemName = $this->input->post('f2');
+		$query = $this->db->select('Stock')->from('inventory')->get();
+		foreach ($query->result() as $row)
+			{
+			    echo $row->Stock;
+			    
+			}
+			$oldstock = $row->Stock;
+			$numtosub = $this->input->post('f2');
+			echo $numtosub;
+			$newstock = $oldstock - $numtosub;
+			echo $newstock;
+
+
+
+
 		$data = array('Itemname' => $this->input->post('f1'),
-		                  'Stock' => $this->input->post('f2'),
+		                  'Stock' => $newstock,
 	              		);
 		$data2 = array('Itemname' => $this->input->post('f1'),
 		                  'QuantitySold' => $this->input->post('f2'),
