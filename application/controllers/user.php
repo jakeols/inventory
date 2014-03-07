@@ -9,13 +9,17 @@ class User extends MY_Controller
 
 	function index()
 	{
-		
+		$this->load->model('inventory');
+		$data['results'] = $this->inventory->recent_transactions();
 		$this->load->view('include/header');
-		$this->load->view('dashboard');
+		$this->load->view('dashboard', $data);
 		$this->load->view('include/footer');
    			
 	}
-
+	function test()
+	{
+		$this->load->view('chart_test');
+	}
 	function new_item()
 	{
 		$this->load->view('include/header');

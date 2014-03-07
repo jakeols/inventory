@@ -24,4 +24,21 @@
 	        </tr>
         </tbody>
     </table>
+    <h3>Recent Transactions</h3>
+    <table class="table">
+    <thead>
+        <tr>
+        <td><h5>Item Name</h5></td>
+        <td><h5>Quantity Sold</h5></td>
+        <td><h5>Date</h5></td>
+    </thead>
+    <tbody>
+        <?php foreach ($results as $entry): ?>
+        <tr>
+            <td><?php echo $entry->ItemName; ?></td>
+            <td><?php echo $entry->QuantitySold;?></td>
+            <td><?php echo $entry->Date; ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
 </div>

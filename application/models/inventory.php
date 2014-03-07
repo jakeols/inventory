@@ -12,6 +12,12 @@ class Inventory extends CI_Model
 		                 );
 		    $this->db->insert('inventory', $data);
 	}
+	function recent_transactions()
+	{
+		$this->db->limit('5');
+		$query = $this->db->select('ItemName, QuantitySold, Date')->from("transactions")->get();
+ 		return $query->result();
+	}
 	function view_inventory()
 	{
 		$query = $this->db->select("ItemName, SKU, Stock, Price")->from("inventory")->get();
