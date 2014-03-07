@@ -3,8 +3,11 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/custom.css">
-</head>
+	
+
+
 <div class="container">
+
 	<h1 class="page_title">Dashboard</h1>
     <table class="table">
     	<thead>
@@ -15,8 +18,8 @@
         </thead>
         <tbody>
 	        <tr>
-	        <td>ex</td>
-	        <td>ex</td>
+	        <td><a href="<?php echo base_url()?>index.php/User/view_inventory"><?php echo $this->db->count_all('inventory');?></a></td>
+	        <td><a href="<?php echo base_url()?>index.php/User/view_transactions"><?php echo $this->db->count_all('transactions');?></a></td>
 	        </tr>
 	        </tr>
         </tbody>
