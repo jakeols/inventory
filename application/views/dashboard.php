@@ -3,12 +3,15 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/custom.css">
-	
-
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="http://code.highcharts.com/modules/exporting.js"></script>
+</head>
 <div class="container">
-
+<body>
 	<h1 class="page_title">Dashboard</h1>
+    <div id="container" style="width:100%; height:400px;"></div>
+
     <table class="table">
     	<thead>
 	    	<tr>
@@ -42,3 +45,29 @@
         <?php endforeach; ?>
     </tbody>
 </div>
+</tr>
+</thead>
+</table>
+</div>
+<!-- chart -->
+<script type="text/javascript">
+    $(function () { 
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Transaction History'
+        },
+        
+        yAxis: {
+            title: {
+                text: 'Number of Sales'
+            }
+        },
+        series: <?php echo $series_data; ?>
+    });
+});
+</script>
+</body>
+</html>

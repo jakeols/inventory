@@ -9,16 +9,15 @@ class User extends MY_Controller
 
 	function index()
 	{
+		$this->load->model('data');
+		$series_data[] = $this->data->get_data();
+		$data['series_data'] = json_encode($series_data[0], JSON_NUMERIC_CHECK);
 		$this->load->model('inventory');
 		$data['results'] = $this->inventory->recent_transactions();
 		$this->load->view('include/header');
 		$this->load->view('dashboard', $data);
 		$this->load->view('include/footer');
    			
-	}
-	function test()
-	{
-		$this->load->view('chart_test');
 	}
 	function new_item()
 	{
