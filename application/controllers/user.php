@@ -43,6 +43,7 @@ class User extends MY_Controller
 	{
 	$this->load->model('inventory');
 	$this->inventory->insert_into_db();
+	$this->load->view('include/header');
 	$this->load->view('success');
 	$this->load->view('include/footer');
 
@@ -56,11 +57,24 @@ class User extends MY_Controller
 
 
 	}
+	function invoice()
+	{
+		$this->load->view('include/header');
+		$this->load->view('invoice');
+	}
+	function submit_invoice()
+	{
+		$this->load->model('inventory');
+		$this->inventory->submit_invoice();
+		$this->load->view('include/header');
+		$this->load->view('created_invoice');
+	}
 	function new_transaction()
 	{
 		$this->load->model('inventory');
 		$this->inventory->new_transaction();
-		$this->load->view('success');
+		$this->load->view('include/header');
+		$this->load->view('success_transaction');
 		$this->load->view('include/footer');
 
 	}
@@ -71,6 +85,14 @@ class User extends MY_Controller
 		$this->load->view('include/header');
 		$this->load->view('transactions', $data);
 		$this->load->view('include/footer');
+
+	}
+	function view_invoices()
+	{
+		$this->load->model('inventory');
+		$data['results'] = $this->inventory->view_invoices();
+		$this->load->view('include/header');
+		$this->load->view('view_invoices', $data);
 
 	}
 }

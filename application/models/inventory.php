@@ -53,11 +53,36 @@ class Inventory extends CI_Model
 				$this->db->where('ItemName', $itemname); 
 	       		$this->db->update('inventory', $data);	
 	}
+	function submit_invoice()
+	{
+		$quantity = $this->input->post('f2');
+		$price = $this->input->post('f3');
+		$tax_percent = $this->input->post('f4');
+		$tax = ($tax_percent / '100') * $price;
+		$total = $quantity * $price + $tax;
+		$total;
+
+		 $data = array('ItemName' => $this->input->post('f1'),
+					'Quantity' => $this->input->post('f2'),
+					'Price' => $this->input->post('f3'),
+					'Tax' => $this->input->post('f4'),
+					'Description' => $this->input->post('f5'),
+					'Total' => $total,
+					'Date' => standard_date()
+					);
+					$this->db->insert('invoices', $data);
+
+	}
  	function view_transactions()
  	{
  		$query = $this->db->select('ItemName, QuantitySold, Date')->from("transactions")->get();
  		return $query->result();
 
+ 	}
+ 	function view_invoices()
+ 	{
+ 		$query = $this->db->select('ItemName, Quantity, Price, Tax, Description, Total, Date')->from('invoices')->get();
+ 			return $query->result();
  	}
 }
 ?>
