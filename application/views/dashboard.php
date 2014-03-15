@@ -9,7 +9,7 @@
     <script type="text/javascript" src="http://code.highcharts.com/modules/exporting.js"></script>
 </head>
 <body>
-	<h1 class="page_title">Dashboard</h1>
+	<h1 class="title_text">Dashboard</h1>
     <div id="container" style="width:90%; height:400px;"></div>
     <table class="table">
     	<thead>

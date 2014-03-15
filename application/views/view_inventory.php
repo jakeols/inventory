@@ -1,4 +1,4 @@
-<h1>View Inventory</h1>
+<h1 class="title_text">View Inventory</h1>
 
 <table class="table table-hover">
     <thead>

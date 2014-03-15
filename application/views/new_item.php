@@ -3,8 +3,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/custom.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/style.css">
 </head>
-<div id="newitem" class="container">
-<h1>
+<div id="newitem">
+<h1 class="title_text">
 Add new Item
 </h1>
 <form action="<?php echo base_url();?>index.php/User/insert_to_db" method="post">

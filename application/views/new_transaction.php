@@ -3,9 +3,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/custom.css">
 </head>
-<br><br>
-<div id="newitem" class="container">
-<h1>
+<div id="newitem">
+<h1 class="title_text">
 New Transaction
 </h1>
 <form action="<?php echo base_url();?>index.php/User/new_transaction" method="post">
