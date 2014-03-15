@@ -1,3 +1,4 @@
+<!-- 
 <head>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/custom.css">
@@ -7,3 +8,4 @@
     Copyright Polism 2014 | Created by <a href="http://jakeols.com">Jake Ols</a>
   </div>
 </nav>
+-->

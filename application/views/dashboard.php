@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Dashboard</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/custom.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
     <script type="text/javascript" src="http://code.highcharts.com/modules/exporting.js"></script>
 </head>
-<div class="container">
 <body>
 	<h1 class="page_title">Dashboard</h1>
-    <div id="container" style="width:100%; height:400px;"></div>
-
+    <div id="container" style="width:90%; height:400px;"></div>
     <table class="table">
     	<thead>
 	    	<tr>
@@ -69,5 +68,13 @@
     });
 });
 </script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
+             </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

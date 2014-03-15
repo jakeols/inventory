@@ -14,6 +14,10 @@
 
     <div  id="infoMessage"><?php echo $message;?></div>
 
+    <?php 
+      $attributes = array('class' => 'form-control'); 
+    ?>
+
     <?php echo form_open("auth/login");?>
 
       <p>
