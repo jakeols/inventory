@@ -84,5 +84,11 @@ class Inventory extends CI_Model
  		$query = $this->db->select('ItemName, Quantity, Price, Tax, Description, Total, Date')->from('invoices')->get();
  			return $query->result();
  	}
+ 	function get_item()
+ 	{
+ 		$itemname = $this->input->post('f1');
+ 		$query = $this->db->select('Price')->from('inventory')->where('ItemName', $itemname)->get();
+ 			return $query->result();
+ 	}
 }
 ?>

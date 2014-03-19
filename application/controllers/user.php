@@ -58,9 +58,10 @@ class User extends MY_Controller
 
 	}
 	function invoice()
-	{
+	{	$this->load->model('inventory');
+		$data['results'] = $this->inventory->get_item();
 		$this->load->view('include/header');
-		$this->load->view('invoice');
+		$this->load->view('invoice', $data);
 	}
 	function submit_invoice()
 	{

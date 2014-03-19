@@ -12,7 +12,11 @@
 	</tr>
 	<tr>
 		<td><h5>Price:</h5></td>
-		<td><div class="input-group"><span class="input-group-addon">$</span><input type="text" name="f3" class="form-control"></td></div>
+		<td>
+			<?php foreach ($results as $entry): ?>
+			<input type="hidden" value="<?php echo $entry->Price;?>" name="f3"><p>$<?php echo $entry->Price;?></p></td>
+			<?php endforeach; ?>
+
 	</tr>
 	<tr>
 		<td><h5>Tax:</h5></td>

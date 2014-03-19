@@ -1,28 +1,30 @@
 <h1 class="title_text">Invoices</h1>
 
-<table class="table table-hover">
-    <thead>
-        <tr>
-        <td><h3>Item Name</h3></td>
-        <td><h3>Quantity</h3></td>
-        <td><h3>Price</h3></td>
-        <td><h3>Description</h3></td>
-        <td><h3>Total</h3></td>
-        <td><h3>Date</h3></td>
-    </thead>
-    <tbody>
-        <?php foreach ($results as $entry): ?>
-        <tr>
-            <td><?php echo $entry->ItemName; ?></td>
-            <td><?php echo $entry->Quantity;?></td>
-            <td>$<?php echo $entry->Price;?></td>
-            <td><?php echo $entry->Description;?></td>
-            <td>$<?php echo $entry->Total?></td>
-            <td><?php echo $entry->Date?></td>
-
-        </tr>
-        <?php endforeach; ?>
-    </tbody>
-
-
-</div>
+<?php foreach ($results as $entry): ?>
+<table class="table">
+    <tr>
+        <td><h5>Item Name:</h5></td>
+        <td><p><?php echo $entry->ItemName; ?></p></td>
+    </tr>
+    <tr>
+        <td><h5>Quantity:</h5></td>
+        <td><p><?php echo $entry->Quantity;?></p></td>
+    </tr>
+    <tr>
+        <td><h5>Price:</h5></td>
+        <td><p>$<?php echo $entry->Price;?></p></td>
+    </tr>
+    <tr>
+        <td><h5>Description:</h5></td>
+        <td><p><?php echo $entry->Description;?></p></td>
+    </tr>
+    <tr>
+        <td><h5>Total:</h5></td>
+        <td><p>$<?php echo $entry->Total;?></p></td>
+    </tr>
+    <tr>
+        <td><h5>Date:</h5></td>
+        <td><p><?php echo $entry->Date; ?></p></td>
+    </tr>
+    </table>
+<?php endforeach; ?>
