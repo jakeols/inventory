@@ -41,11 +41,11 @@ class User extends MY_Controller
 	
 	function insert_to_db()
 	{
-	$this->load->model('inventory');
-	$this->inventory->insert_into_db();
-	$this->load->view('include/header');
-	$this->load->view('success');
-	$this->load->view('include/footer');
+		$this->load->model('inventory');
+		$this->inventory->insert_into_db();
+		$this->load->view('include/header');
+		$this->load->view('success');
+		$this->load->view('include/footer');
 
 	}
 

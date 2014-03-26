@@ -1,7 +1,10 @@
 /**
  * All your custom CSS should go into this file
  */
-
+.invoices-data
+{
+  border: 2px solid black;
+}
 .navbar,
 .navbar-default
 {

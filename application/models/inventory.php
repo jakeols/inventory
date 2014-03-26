@@ -41,9 +41,11 @@ class Inventory extends CI_Model
 			$numtosub;
 			$newstock = $oldstock - $numtosub;
 			$newstock;
+		#data to update current inventory
 		$data = array('Itemname' => $this->input->post('f1'),
 		                  'Stock' => $newstock,
 	              		);
+		#data for transactions
 		$data2 = array('Itemname' => $this->input->post('f1'),
 		                  'QuantitySold' => $this->input->post('f2'),
 		                  'Date' => standard_date()

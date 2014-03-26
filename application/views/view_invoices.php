@@ -1,7 +1,7 @@
 <h1 class="title_text">Invoices</h1>
 
 <?php foreach ($results as $entry): ?>
-<table class="table">
+<table class="table invoices-data">
     <tr>
         <td><h5>Item Name:</h5></td>
         <td><p><?php echo $entry->ItemName; ?></p></td>
