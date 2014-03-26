@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 29, 2013 at 09:26 PM
+-- Generation Time: Mar 27, 2014 at 12:17 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.4.10
 
@@ -53,6 +53,22 @@ CREATE TABLE `inventory` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `invoices`
+--
+
+CREATE TABLE `invoices` (
+  `ItemName` varchar(255) NOT NULL,
+  `Quantity` varchar(255) NOT NULL,
+  `Price` varchar(255) NOT NULL,
+  `Tax` varchar(255) NOT NULL,
+  `Description` blob NOT NULL,
+  `Total` varchar(255) NOT NULL,
+  `Date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `login_attempts`
 --
 
@@ -72,21 +88,27 @@ CREATE TABLE `login_attempts` (
 
 CREATE TABLE `transactions` (
   `ItemName` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `QuantitySold` varchar(255) CHARACTER SET utf8 NOT NULL
+  `QuantitySold` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `Date` varchar(255) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`ItemName`, `QuantitySold`) VALUES
-('jake', '9'),
-('jake', '5'),
-('jake', '10'),
-('vikas', '10000000000'),
-('jake', '1'),
-('jake', '1'),
-('jake', '1');
+INSERT INTO `transactions` (`ItemName`, `QuantitySold`, `Date`) VALUES
+('hoodie', '10', 'Sat, 15 Mar 14 22:20:08 +0100'),
+('Shirt', '2', 'Sat, 15 Mar 14 22:20:28 +0100'),
+('Pants', '6', 'Sat, 15 Mar 14 22:20:34 +0100'),
+('hoodie', '1', 'Sun, 16 Mar 14 19:44:39 +0100'),
+('Shirt', '1', 'Sun, 16 Mar 14 19:51:22 +0100'),
+('hoodie', '10', 'Sun, 16 Mar 14 19:53:10 +0100'),
+('test', '1', 'Sun, 16 Mar 14 19:53:27 +0100'),
+('Shirt', '100', 'Sun, 16 Mar 14 19:56:17 +0100'),
+('Pants', '2', 'Sun, 16 Mar 14 19:58:00 +0100'),
+('hoodie', '1', 'Mon, 17 Mar 14 17:10:00 +0100'),
+('Shirt', '1', 'Wed, 19 Mar 14 17:44:43 +0100'),
+('hoodie', '1', 'Mon, 24 Mar 14 01:00:11 +0100');
 
 -- --------------------------------------------------------
 
@@ -113,14 +135,14 @@ CREATE TABLE `users` (
   `company` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '\0\0', 'administrator', '59beecdf7fc966e2f17fd8f65a4a9aeb09d4a3d4', '9462e8eee0', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1377291439, 1, 'Admin', 'istrator', 'ADMIN', '0');
+(1, '\0\0', 'administrator', '59beecdf7fc966e2f17fd8f65a4a9aeb09d4a3d4', '9462e8eee0', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1395871012, 1, 'Admin', 'istrator', 'ADMIN', '0');
 
 -- --------------------------------------------------------
 
@@ -136,7 +158,7 @@ CREATE TABLE `users_groups` (
   UNIQUE KEY `uc_users_groups` (`user_id`,`group_id`),
   KEY `fk_users_groups_users1_idx` (`user_id`),
   KEY `fk_users_groups_groups1_idx` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `users_groups`
