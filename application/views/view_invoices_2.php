@@ -1,9 +1,7 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/custom.css">
-</head>
 <div class="container">
-<h1>Invoices</h1>
+<h1 class="title_text">Invoices</h1><br>
+<i><a href="<?php echo base_url()?>index.php/User/view_invoices_raw" class="view_as">View as Raw Data</a></i>
+
 
 <?php foreach ($results as $entry): ?>
 <table class="table invoices-data">
@@ -34,3 +32,5 @@
     </table>
 <?php endforeach; ?>
 </div>
+<ul class="pagination"><?php echo $links;?></ul>
+

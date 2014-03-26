@@ -18,10 +18,16 @@ class Inventory extends CI_Model
 		$query = $this->db->select('ItemName, QuantitySold, Date')->from("transactions")->get();
  		return $query->result();
 	}
-	function view_inventory()
+	public function view_inventory($limit, $start)
 	{
+		$this->db->limit($limit, $start);
 		$query = $this->db->select("ItemName, SKU, Stock, Price")->from("inventory")->get();
 		    return $query->result();
+	}
+	function view_inventory_raw()
+	{
+		$query = $this->db->select("ItemName, SKU, Stock, Price")->from("inventory")->get();
+			return $query->result();
 	}
 
 	function new_transaction()
@@ -81,7 +87,13 @@ class Inventory extends CI_Model
  		return $query->result();
 
  	}
- 	function view_invoices()
+ 	public function view_invoices($limit, $start)
+ 	{
+ 	$this->db->limit($limit, $start);
+		$query = $this->db->select("ItemName, Quantity, Price, Tax, Description, Total, Date")->from("invoices")->get();
+		    return $query->result();
+	}
+ 	function view_invoices_raw()
  	{
  		$query = $this->db->select('ItemName, Quantity, Price, Tax, Description, Total, Date')->from('invoices')->get();
  			return $query->result();

@@ -30,11 +30,29 @@ class User extends MY_Controller
 
 	function view_inventory()
 	{
+		$config['base_url'] = 'http://localhost:8888/Polism/index.php/User/view_inventory';
+		$config['total_rows'] = $this->db->count_all('inventory');
+		$config['per_page'] = '10';
+		$config['full_tag_open'] = '<ul class="pagination">';
+
+		$this->pagination->initialize($config); 
+
 		$this->load->model('inventory');
-		$data['results'] = $this->inventory->view_inventory();
+		$page = ($this->uri->segment(3))? $this->uri->segment(3) : 0;
+		$data['results'] = $this->inventory->view_inventory($config["per_page"], $page);
+		$data['links'] = $this->pagination->create_links();
+		
 		$this->load->view('include/header');
 		$this->load->view('view_inventory', $data);
 		$this->load->view('include/footer');
+
+
+	}
+	function view_inventory_raw()
+	{
+		$this->load->model('inventory');
+		$data['results'] = $this->inventory->view_inventory_raw();
+		$this->load->view('view_inventory_raw', $data);
 
 
 	}
@@ -88,13 +106,30 @@ class User extends MY_Controller
 		$this->load->view('include/footer');
 
 	}
-	function view_invoices()
+	function view_invoices_raw()
 	{
 		$this->load->model('inventory');
-		$data['results'] = $this->inventory->view_invoices();
-		$this->load->view('include/header');
+		$data['results'] = $this->inventory->view_invoices_raw();
 		$this->load->view('view_invoices', $data);
 
+	}
+	function view_invoices()
+	{
+		$config['base_url'] = 'http://localhost:8888/Polism/index.php/User/view_invoices';
+		$config['total_rows'] = $this->db->count_all('invoices');
+		$config['per_page'] = '5';
+		$config['full_tag_open'] = '<ul class="pagination">';
+
+		$this->pagination->initialize($config); 
+
+		$this->load->model('inventory');
+		$page = ($this->uri->segment(3))? $this->uri->segment(3) : 0;
+		$data['results'] = $this->inventory->view_invoices($config["per_page"], $page);
+		$data['links'] = $this->pagination->create_links();
+		
+		$this->load->view('include/header');
+		$this->load->view('view_invoices_2', $data);
+		$this->load->view('include/footer');
 	}
 }
 ?>

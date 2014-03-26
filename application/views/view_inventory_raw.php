@@ -1,7 +1,8 @@
-<h1 class="title_text">View Inventory</h1><br>
-<i><a href="<?php echo base_url()?>index.php/User/view_inventory_raw" class="view_as">View as Raw Data</a></i>
-
-<table class="table table-hover">
+<head>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap.css">
+</head>
+<div class="container">
+<table class="table">
     <thead>
         <tr>
             <td><h3>Item Name</h3></td>
@@ -21,6 +22,4 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-
-<ul class="pagination"><?php echo $links;?></ul>
-
+</div>
