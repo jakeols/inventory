@@ -12,5 +12,3 @@ A small open source inventory management system I just began developing. Built i
 -Go to http://www.(yourwebsite)/Polism/index.php/auth/login and login. The default login is username: "admin" password: "password"<br>
 -If you would like to create additional login accounts, go to http://www.(yourwebsite)/Polism/index.php/auth/create_user *Note: You must be logged in as admin to use this feature.<br>
 <br>
-
-Polism is still under rapid development.
